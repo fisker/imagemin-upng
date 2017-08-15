@@ -5,7 +5,7 @@ var upng = require('upng-js');
 
 module.exports = function(opts) {
   opts = opts || {};
-  
+
   return function(buf) {
     if (!Buffer.isBuffer(buf)) {
       return Promise.reject(new TypeError('Expected a buffer'));
@@ -23,8 +23,9 @@ module.exports = function(opts) {
     var oriImg  = upng.decode(buf);
     var oriRGBA = upng.toRGBA8(oriImg).buffer;
 
-    var comArrayBuff = upng.encode(oriRGBA, oriImg.width, oriImg.height, opts.cnum);
+    var comArrayBuff = upng.encode(oriRGBA, oriImg.width, oriImg.height, cnum);
+    var comBuffer = Buffer.from(comArrayBuff)
 
-    return Promise.resolve(Buffer.from(comArrayBuff));
+    return Promise.resolve(comBuffer);
   };
 };
