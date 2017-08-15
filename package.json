@@ -1,6 +1,6 @@
 {
   "name": "imagemin-upng",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "upng imagemin plugin",
   "license": "MIT",
   "repository": "fisker/imagemin-upng",

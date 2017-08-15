@@ -4,7 +4,7 @@ var isPng = require('is-png');
 var upng = require('upng-js');
 
 module.exports = function(opts) {
-  opts = opts || {};
+	opts = Object.assign({cnum: 256}, opts);
 
   return function(buf) {
     if (!Buffer.isBuffer(buf)) {
@@ -15,15 +15,10 @@ module.exports = function(opts) {
       return Promise.resolve(buf);
     }
 
-    var cnum = opts.cnum;
-    if (isNaN(cnum)) {
-      cnum = 256;
-    }
-
     var oriImg  = upng.decode(buf);
     var oriRGBA = upng.toRGBA8(oriImg).buffer;
 
-    var comArrayBuff = upng.encode(oriRGBA, oriImg.width, oriImg.height, cnum);
+    var comArrayBuff = upng.encode(oriRGBA, oriImg.width, oriImg.height, opts.cnum);
     var comBuffer = Buffer.from(comArrayBuff)
 
     return Promise.resolve(comBuffer);
