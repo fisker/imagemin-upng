@@ -24,7 +24,7 @@ imagemin(['images/*.png'], 'build/images', {use: [imageminUPNG()]}).then(() => {
 
 ## API
 
-### imageminupng([options])(buffer)
+### imageminUPNG([options])(buffer)
 
 Returns a promise for a buffer.
 
