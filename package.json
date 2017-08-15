@@ -1,0 +1,32 @@
+{
+  "name": "imagemin-upng",
+  "version": "1.0.1",
+  "description": "upng imagemin plugin",
+  "license": "MIT",
+  "repository": "fisker/imagemin-upng",
+  "author": {
+    "name": "fisker Cheung",
+    "email": "lionkay@gmail.com",
+    "url": "github.com/fisker"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "compress",
+    "image",
+    "imageminplugin",
+    "img",
+    "minify",
+    "optimize",
+    "upng",
+    "upng-js"
+  ],
+  "dependencies": {
+    "is-png": "^1.0.0",
+    "upng-js": "^1.0.0"
+  }
+}
