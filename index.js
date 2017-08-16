@@ -1,7 +1,7 @@
 'use strict';
 
 var isPng = require('is-png');
-var upng = require('upng-js');
+var UPNG = require('upng-js');
 
 module.exports = function(opts) {
 	opts = Object.assign({cnum: 256}, opts);
@@ -15,10 +15,10 @@ module.exports = function(opts) {
       return Promise.resolve(buf);
     }
 
-    var oriImg = upng.decode(buf);
-    var oriRGBA = upng.toRGBA8(oriImg);
+    var oriImg = UPNG.decode(buf);
+    var oriRGBA = UPNG.toRGBA8(oriImg);
 
-    var comArrayBuff = upng.encode(oriRGBA, oriImg.width, oriImg.height, opts.cnum);
+    var comArrayBuff = UPNG.encode(oriRGBA, oriImg.width, oriImg.height, opts.cnum);
     var comBuffer = Buffer.from(comArrayBuff);
 
     return Promise.resolve(comBuffer);
