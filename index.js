@@ -19,7 +19,7 @@ module.exports = function(opts) {
     var oriRGBA = upng.toRGBA8(oriImg);
 
     var comArrayBuff = upng.encode(oriRGBA, oriImg.width, oriImg.height, opts.cnum);
-    var comBuffer = Buffer.from(comArrayBuff)
+    var comBuffer = Buffer.from(comArrayBuff);
 
     return Promise.resolve(comBuffer);
   };
