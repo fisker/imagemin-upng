@@ -16,7 +16,7 @@ module.exports = function(opts) {
     }
 
     var oriImg  = upng.decode(buf);
-    var oriRGBA = upng.toRGBA8(oriImg).buffer;
+    var oriRGBA = upng.toRGBA8(oriImg);
 
     var comArrayBuff = upng.encode(oriRGBA, oriImg.width, oriImg.height, opts.cnum);
     var comBuffer = Buffer.from(comArrayBuff)
