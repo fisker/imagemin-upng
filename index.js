@@ -16,17 +16,21 @@ module.exports = function(options) {
     }
 
     var img = UPNG.decode(input)
-    var dels = img.frames.map(function(frame) {
-      return frame.delay
-    })
-    var rgba = UPNG.toRGBA8(img)
 
-    var buffer = Buffer.from(
-      UPNG.encode(rgba, img.width, img.height, options.cnum, dels)
+    var output = Buffer.from(
+      UPNG.encode(
+        UPNG.toRGBA8(img),
+        img.width,
+        img.height,
+        options.cnum,
+        img.frames.map(function(frame) {
+          return frame.delay
+        })
+      )
     )
 
     return Promise.resolve(
-      buffer.byteLength < input.byteLength ? buffer : input
+      output.byteLength < input.byteLength ? output : input
     )
   }
 }
