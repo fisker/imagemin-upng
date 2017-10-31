@@ -33,7 +33,7 @@
   },
   "scripts": {
     "test": "eslint index.js && ava",
-    "publish": "npm --registry=https://registry.npmjs.org/ publish"
+    "release": "npm --registry=https://registry.npmjs.org/ publish"
   },
   "devDependencies": {
     "ava": "*"
