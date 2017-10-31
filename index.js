@@ -2,9 +2,12 @@
 
 var UPNG = require('upng-js')
 var isPng = require('is-png')
+var defaultOptions = {
+  cnum: 256
+}
 
 module.exports = function(options) {
-  options = Object.assign({cnum: 256}, options)
+  options = Object.assign({}, defaultOptions, options)
 
   return function(input) {
     if (!Buffer.isBuffer(input)) {
