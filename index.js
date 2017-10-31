@@ -32,8 +32,6 @@ module.exports = function(options) {
       )
     )
 
-    return Promise.resolve(
-      output.byteLength < input.byteLength ? output : input
-    )
+    return Promise.resolve(output)
   }
 }
