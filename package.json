@@ -1,6 +1,6 @@
 {
   "name": "imagemin-upng",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "upng imagemin plugin",
   "license": "MIT",
   "repository": "fisker/imagemin-upng",
@@ -22,11 +22,20 @@
     "img",
     "minify",
     "optimize",
+    "png",
+    "apng",
     "upng",
     "upng-js"
   ],
   "dependencies": {
     "is-png": "^1.0.0",
-    "upng-js": "^1.0.0"
+    "upng-js": "^2.0.0"
+  },
+  "scripts": {
+    "test": "eslint index.js && ava",
+    "publish": "npm --registry=https://registry.npm.taobao.org/ publish"
+  },
+  "devDependencies": {
+    "ava": "*"
   }
 }

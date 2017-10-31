@@ -1,25 +1,32 @@
-'use strict';
+'use strict'
 
-var isPng = require('is-png');
-var UPNG = require('upng-js');
+var UPNG = require('upng-js')
+var isPng = require('is-png')
 
 module.exports = function(options) {
-  options = Object.assign({cnum: 256}, options);
+  options = Object.assign({cnum: 256}, options)
 
-  return function(buffer) {
-    if (!Buffer.isBuffer(buffer)) {
-      return Promise.reject(new TypeError('Expected a buffer'));
+  return function(input) {
+    if (!Buffer.isBuffer(input)) {
+      return Promise.reject(new TypeError('Expected a buffer'))
     }
 
-    if (!isPng(buffer)) {
-      return Promise.resolve(buffer);
+    if (!isPng(input)) {
+      return Promise.resolve(input)
     }
 
-    var img = UPNG.decode(buffer);
-    var rgba = UPNG.toRGBA8(img);
+    var img = UPNG.decode(input)
+    var dels = img.frames.map(function(frame) {
+      return frame.delay
+    })
+    var rgba = UPNG.toRGBA8(img)
 
-    var newBuffer = Buffer.from(UPNG.encode(rgba, img.width, img.height, options.cnum));
+    var buffer = Buffer.from(
+      UPNG.encode(rgba, img.width, img.height, options.cnum, dels)
+    )
 
-    return Promise.resolve(newBuffer.byteLength < buffer.byteLength ? newBuffer : buffer);
-  };
-};
+    return Promise.resolve(
+      buffer.byteLength < input.byteLength ? buffer : input
+    )
+  }
+}

@@ -9,7 +9,6 @@
 $ npm install --save imagemin-upng
 ```
 
-
 ## Usage
 
 ```js
@@ -44,7 +43,6 @@ Type: `Buffer`
 
 Buffer to optimize.
 
-
 ## License
 
-MIT © [imagemin](https://github.com/imagemin)
+MIT © [fisker Cheung](https://github.com/fisker)
