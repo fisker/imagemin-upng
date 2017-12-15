@@ -29,13 +29,13 @@
   ],
   "dependencies": {
     "is-png": "^1.0.0",
-    "upng-js": "^2.0.0"
+    "upng-js": "^2.1.0"
   },
   "scripts": {
     "test": "eslint index.js && ava",
     "release": "npm --registry=https://registry.npmjs.org/ publish"
   },
   "devDependencies": {
-    "ava": "*"
+    "ava": "0.24.0"
   }
 }
