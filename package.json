@@ -36,6 +36,9 @@
     "release": "npm --registry=https://registry.npmjs.org/ publish"
   },
   "devDependencies": {
-    "ava": "0.24.0"
+    "ava": "0.24.0",
+    "eslint": "^4.14.0",
+    "eslint-plugin-prettier": "^2.4.0",
+    "prettier": "^1.9.2"
   }
 }
