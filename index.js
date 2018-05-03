@@ -11,7 +11,9 @@ module.exports = function(options) {
 
   return function(input) {
     if (!Buffer.isBuffer(input)) {
-      return Promise.reject(new TypeError('Expected a buffer'))
+      return Promise.reject(
+        new TypeError('Expected a `Buffer`, got `' + typeof input + '`.')
+      )
     }
 
     if (!isPng(input)) {
