@@ -1,5 +1,7 @@
 # imagemin-upng
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fisker/imagemin-upng.svg)](https://greenkeeper.io/)
+
 > upng imagemin plugin
 
 
