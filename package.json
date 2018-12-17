@@ -38,19 +38,13 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "ava": "0.25.0",
-<<<<<<< .mine
+    "ava": "1.0.1",
     "eslint": "^5.7.0",
     "eslint-plugin-prettier": "^3.0.0",
     "np": "^3.0.4",
     "prettier": "^1.14.3",
-    "semantic-release": "^15.10.5"
-=======
+    "semantic-release": "^15.10.5",
     "eslint": "^5.7.0",
-    "eslint-plugin-prettier": "^3.0.0",
-    "prettier": "^1.12.1"
-
-
->>>>>>> .theirs
+    "eslint-plugin-prettier": "^3.0.0"
   }
 }
