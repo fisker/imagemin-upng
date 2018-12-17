@@ -39,8 +39,6 @@
   },
   "devDependencies": {
     "ava": "1.0.1",
-    "eslint": "^5.7.0",
-    "eslint-plugin-prettier": "^3.0.0",
     "np": "^3.0.4",
     "prettier": "^1.14.3",
     "semantic-release": "^15.10.5",
