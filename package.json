@@ -38,7 +38,7 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "ava": "1.2.0",
+    "ava": "1.2.1",
     "np": "^4.0.2",
     "prettier": "^1.14.3",
     "semantic-release": "^15.10.5",
