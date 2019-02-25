@@ -28,8 +28,8 @@
     "upng-js"
   ],
   "dependencies": {
-    "is-png": "^1.1.0",
-    "upng-js": "^2.1.0"
+    "is-png": "1.1.0",
+    "upng-js": "2.1.0"
   },
   "scripts": {
     "update-dependencies": "yarn upgrade-interactive --latest",
@@ -39,10 +39,10 @@
   },
   "devDependencies": {
     "ava": "1.2.1",
-    "np": "^4.0.2",
-    "prettier": "^1.16.4",
-    "semantic-release": "^15.13.3",
-    "eslint": "^5.13.0",
-    "eslint-plugin-prettier": "^3.0.1"
+    "np": "4.0.2",
+    "prettier": "1.16.4",
+    "semantic-release": "15.13.4",
+    "eslint": "5.14.1",
+    "eslint-plugin-prettier": "3.0.1"
   }
 }
