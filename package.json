@@ -42,7 +42,7 @@
     "np": "4.0.2",
     "prettier": "1.16.4",
     "semantic-release": "15.13.4",
-    "eslint": "5.14.1",
+    "eslint": "5.15.0",
     "eslint-plugin-prettier": "3.0.1"
   }
 }
