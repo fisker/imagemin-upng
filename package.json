@@ -26,8 +26,8 @@
     "upng-js"
   ],
   "dependencies": {
-    "is-png": "^1.1.0",
-    "upng-js": "^2.1.0"
+    "is-png": "1.1.0",
+    "upng-js": "2.1.0"
   },
   "scripts": {
     "update-dependencies": "yarn upgrade-interactive --latest",
