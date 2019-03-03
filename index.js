@@ -1,39 +1,38 @@
-'use strict'
+const UPNG = require('upng-js')
+const isPng = require('is-png')
 
-var UPNG = require('upng-js')
-var isPng = require('is-png')
-var defaultOptions = {
-  cnum: 256
+const defaults = {
+  cnum: 256,
 }
 
-module.exports = function(options) {
-  options = Object.assign({}, defaultOptions, options)
+function getDelay(frame) {
+  return frame.delay
+}
 
-  return function(input) {
-    if (!Buffer.isBuffer(input)) {
-      return Promise.reject(
-        new TypeError('Expected a `Buffer`, got `' + typeof input + '`.')
-      )
-    }
+module.exports = options => buffer => {
+  options = Object.assign({}, defaults, options)
 
-    if (!isPng(input)) {
-      return Promise.resolve(input)
-    }
-
-    var img = UPNG.decode(input)
-
-    var output = Buffer.from(
-      UPNG.encode(
-        UPNG.toRGBA8(img),
-        img.width,
-        img.height,
-        options.cnum,
-        img.frames.map(function(frame) {
-          return frame.delay
-        })
-      )
+  if (!Buffer.isBuffer(buffer)) {
+    return Promise.reject(
+      new TypeError(`Expected a \`Buffer\`, got \`${typeof input}\`.`)
     )
-
-    return Promise.resolve(output)
   }
+
+  if (!isPng(buffer)) {
+    return Promise.resolve(buffer)
+  }
+
+  const img = UPNG.decode(buffer)
+
+  const output = Buffer.from(
+    UPNG.encode(
+      UPNG.toRGBA8(img),
+      img.width,
+      img.height,
+      options.cnum,
+      img.frames.map(getDelay)
+    )
+  )
+
+  return Promise.resolve(output)
 }

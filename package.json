@@ -12,9 +12,7 @@
   "engines": {
     "node": ">=4"
   },
-  "files": [
-    "index.js"
-  ],
+  "files": ["index.js"],
   "keywords": [
     "compress",
     "image",
@@ -38,11 +36,26 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@xwtec/eslint-config": "^3.5.10",
     "ava": "1.2.1",
+    "cz-conventional-changelog-emoji": "^0.1.0",
+    "eslint": "^5.13.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "markdownlint-cli": "^0.14.0",
     "np": "^4.0.2",
     "prettier": "^1.16.4",
-    "semantic-release": "^15.13.3",
-    "eslint": "^5.13.0",
-    "eslint-plugin-prettier": "^3.0.1"
+    "semantic-release": "^15.13.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog-emoji"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
