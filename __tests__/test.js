@@ -1,7 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import isPng from 'is-png'
-// eslint-disable-next-line import/no-extraneous-dependencies
 import test from 'ava'
 import m from '..'
 
@@ -18,52 +17,52 @@ function writeFixture(file, data) {
 }
 
 test('optimize PNG', async t => {
-  const buf = readFixture('png.png')
-  const data = await m()(buf)
+  const buffer = readFixture('png.png')
+  const data = await m()(buffer)
 
   writeFixture('png-compressed.png', data)
 
-  t.true(data.length < buf.length)
+  t.true(data.length < buffer.length)
   t.true(isPng(data))
 })
 
 test('optimize APNG', async t => {
-  const buf = readFixture('apng.png')
-  const data = await m()(buf)
+  const buffer = readFixture('apng.png')
+  const data = await m()(buffer)
 
   writeFixture('apng-compressed.png', data)
 
-  t.true(data.length < buf.length)
+  t.true(data.length < buffer.length)
   t.true(isPng(data))
 })
 
 test('support options', async t => {
-  const buf = readFixture('png.png')
+  const buffer = readFixture('png.png')
   const data = await m({
     cnum: 128,
-  })(buf)
+  })(buffer)
 
   t.true(data.length < 28000)
   t.true(isPng(data))
 })
 
 test('skip optimizing a non-PNG file', async t => {
-  const buf = await fs.readFileSync(__filename)
-  const data = await m()(buf)
+  const buffer = await fs.readFileSync(__filename)
+  const data = await m()(buffer)
 
-  t.is(data.length, buf.length)
+  t.is(data.length, buffer.length)
 })
 
 test.skip('skip optimizing a fully optimized PNG', async t => {
-  const buf = readFixture('png-compressed.png')
-  const data = await m()(buf)
-  t.is(data.length, buf.length)
+  const buffer = readFixture('png-compressed.png')
+  const data = await m()(buffer)
+  t.is(data.length, buffer.length)
   t.true(isPng(data))
 })
 
 test.skip('skip optimizing a fully optimized APNG', async t => {
-  const buf = readFixture('apng-compressed.png')
-  const data = await m()(buf)
-  t.is(data.length, buf.length)
+  const buffer = readFixture('apng-compressed.png')
+  const data = await m()(buffer)
+  t.is(data.length, buffer.length)
   t.true(isPng(data))
 })
