@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import isPng from 'is-png'
 import test from 'ava'
-import m from '..'
+import upng from '..'
 
 function getFixture(file) {
   return path.join(__dirname, 'fixtures', file)
@@ -16,9 +16,15 @@ function writeFixture(file, data) {
   return fs.writeFileSync(getFixture(file), data)
 }
 
+test('reject on non-buffer', async t => {
+  await t.throwsAsync(async () => {
+    await upng()(null)
+  }, TypeError)
+})
+
 test('optimize PNG', async t => {
   const buffer = readFixture('png.png')
-  const data = await m()(buffer)
+  const data = await upng()(buffer)
 
   writeFixture('png-compressed.png', data)
 
@@ -28,7 +34,7 @@ test('optimize PNG', async t => {
 
 test('optimize APNG', async t => {
   const buffer = readFixture('apng.png')
-  const data = await m()(buffer)
+  const data = await upng()(buffer)
 
   writeFixture('apng-compressed.png', data)
 
@@ -38,7 +44,7 @@ test('optimize APNG', async t => {
 
 test('support options', async t => {
   const buffer = readFixture('png.png')
-  const data = await m({
+  const data = await upng({
     cnum: 128,
   })(buffer)
 
@@ -48,21 +54,21 @@ test('support options', async t => {
 
 test('skip optimizing a non-PNG file', async t => {
   const buffer = await fs.readFileSync(__filename)
-  const data = await m()(buffer)
+  const data = await upng()(buffer)
 
   t.is(data.length, buffer.length)
 })
 
 test.skip('skip optimizing a fully optimized PNG', async t => {
   const buffer = readFixture('png-compressed.png')
-  const data = await m()(buffer)
+  const data = await upng()(buffer)
   t.is(data.length, buffer.length)
   t.true(isPng(data))
 })
 
 test.skip('skip optimizing a fully optimized APNG', async t => {
   const buffer = readFixture('apng-compressed.png')
-  const data = await m()(buffer)
+  const data = await upng()(buffer)
   t.is(data.length, buffer.length)
   t.true(isPng(data))
 })
