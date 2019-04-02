@@ -1616,10 +1616,10 @@ eslint-config-airbnb-base@^13.1.0:
     object.assign "^4.1.0"
     object.entries "^1.0.4"
 
-eslint-config-fisker@^4.3.0:
-  version "4.3.0"
-  resolved "http://registry.npm.taobao.org/eslint-config-fisker/download/eslint-config-fisker-4.3.0.tgz#42f28c3aced213a3431b728faddd737c90b5122b"
-  integrity sha1-QvKMOs7SE6NDG3KPrd1zfJC1Eis=
+eslint-config-fisker@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-fisker/-/eslint-config-fisker-4.3.1.tgz#0302b50550a3ff07addd6c1d99e3fad8f04cc7c1"
+  integrity sha512-84uyfbBD7DZwzvWWzPKAsZSLosHHZ88YN1PGU3+ltP3xyPFcAdwNoOe2yyhMKCCMZq68d+pBELdDgwAtLJqXug==
   dependencies:
     eslint-config-airbnb-base "^13.1.0"
     eslint-config-prettier "^4.1.0"
@@ -1629,7 +1629,7 @@ eslint-config-fisker@^4.3.0:
     eslint-plugin-import "^2.16.0"
     eslint-plugin-node "^8.0.1"
     eslint-plugin-prettier "^3.0.1"
-    eslint-plugin-promise "^4.0.1"
+    eslint-plugin-promise "^4.1.1"
     eslint-plugin-unicorn "^8.0.1"
     eslint-plugin-vue "^5.2.2"
 
@@ -1714,10 +1714,10 @@ eslint-plugin-prettier@^3.0.1:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
-eslint-plugin-promise@^4.0.1:
-  version "4.0.1"
-  resolved "http://registry.npm.taobao.org/eslint-plugin-promise/download/eslint-plugin-promise-4.0.1.tgz#2d074b653f35a23d1ba89d8e976a985117d1c6a2"
-  integrity sha1-LQdLZT81oj0bqJ2Ol2qYURfRxqI=
+eslint-plugin-promise@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-4.1.1.tgz#1e08cb68b5b2cd8839f8d5864c796f56d82746db"
+  integrity sha512-faAHw7uzlNPy7b45J1guyjazw28M+7gJokKUjC5JSFoYfUEyy6Gw/i7YQvmv2Yk00sUjWcmzXQLpU1Ki/C2IZQ==
 
 eslint-plugin-unicorn@^8.0.1:
   version "8.0.1"
