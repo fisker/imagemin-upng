@@ -11,11 +11,11 @@ npm install --save imagemin-upng
 ## Usage
 
 ```js
-const imagemin = require("imagemin")
-const imageminUPNG = require("imagemin-upng")
+const imagemin = require('imagemin')
+const imageminUPNG = require('imagemin-upng')
 
-imagemin(["images/*.png"], "build/images", {use: [imageminUPNG()]}).then(() => {
-  console.log("Images optimized")
+imagemin(['images/*.png'], 'build/images', {use: [imageminUPNG()]}).then(() => {
+  console.log('Images optimized')
 })
 ```
 

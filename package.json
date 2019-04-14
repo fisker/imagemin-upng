@@ -27,8 +27,14 @@
     "upng-js": "^2.1.0"
   },
   "scripts": {
-    "lint": "eslint **/*.js --fix",
-    "test": "ava"
+    "test": "ava",
+    "release": "run-s lint test dist",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint **/*.{js,mjs,vue} --fix",
+    "lint:markdown": "markdownlint **/*.md --ignore \"node_modules/**\"",
+    "dist": "run-p dist:*",
+    "dist:npm": "np --yolo --no-yarn",
+    "prettier": "prettier **/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml} --write"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",
@@ -41,7 +47,8 @@
     "husky": "^1.3.1",
     "lint-staged": "^8.1.5",
     "markdownlint-cli": "^0.15.0",
-    "prettier": "^1.17.0"
+    "prettier": "^1.17.0",
+    "prettier-config-fisker": "^1.0.0"
   },
   "config": {
     "commitizen": {
