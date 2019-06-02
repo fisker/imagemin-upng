@@ -44,7 +44,7 @@
     "@fisker/eslint-config": "^1.0.15",
     "@fisker/lint-staged-config": "^1.0.4",
     "@fisker/prettier-config": "^1.0.17",
-    "ava": "^1.4.1",
+    "ava": "^2.0.0",
     "cz-conventional-changelog-emoji": "^0.1.0",
     "eslint": "^5.16.0",
     "husky": "^2.3.0",
