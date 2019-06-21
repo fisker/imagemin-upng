@@ -29,19 +29,22 @@
     "upng-js": "^2.1.0"
   },
   "scripts": {
-    "test": "ava",
-    "release": "run-s lint test prettier dist",
-    "lint": "run-p lint:*",
-    "lint:eslint": "eslint **/*.{js,mjs,vue} --fix",
-    "lint:markdown": "markdownlint **/*.md --ignore \"**/node_modules/**\"",
     "dist": "run-p dist:*",
     "dist:npm": "np --yolo --no-yarn",
-    "prettier": "prettier **/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml} --write"
+    "format": "run-p format:*",
+    "format:eslint": "yarn lint:eslint --fix",
+    "format:prettier": "prettier **/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml} --write",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint \"**/*.{js,mjs,vue}\"",
+    "lint:markdown": "markdownlint **/*.md --ignore \"**/node_modules/**\"",
+    "release": "run-s lint test format dist",
+    "test": "ava"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
     "@fisker/commitlint-config": "^1.0.9",
     "@fisker/eslint-config": "^1.1.2",
+    "@fisker/husky-config": "^1.1.0",
     "@fisker/lint-staged-config": "^1.0.4",
     "@fisker/prettier-config": "^1.0.17",
     "ava": "^2.1.0",
@@ -61,5 +64,6 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
-  }
+  },
+  "sideEffects": false
 }
