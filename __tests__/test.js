@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import isPng from 'is-png'
 import test from 'ava'
-import upng from '..'
+import upng from '../src'
 
 function getFixture(file) {
   return path.join(__dirname, 'fixtures', file)
@@ -59,6 +59,7 @@ test('skip optimizing a non-PNG file', async t => {
   t.is(data.length, buffer.length)
 })
 
+// eslint-disable-next-line ava/no-skip-test
 test.skip('skip optimizing a fully optimized PNG', async t => {
   const buffer = readFixture('png-compressed.png')
   const data = await upng()(buffer)
@@ -66,6 +67,7 @@ test.skip('skip optimizing a fully optimized PNG', async t => {
   t.true(isPng(data))
 })
 
+// eslint-disable-next-line ava/no-skip-test
 test.skip('skip optimizing a fully optimized APNG', async t => {
   const buffer = readFixture('apng-compressed.png')
   const data = await upng()(buffer)
