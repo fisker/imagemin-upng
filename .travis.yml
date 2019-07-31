@@ -3,10 +3,10 @@ node_js:
   - "8"
   - "10"
   - "12"
-sudo: false
-cache: yarn
+cache:
+  yarn: true
 before_install:
-  - npm install --global nyc codecov coveralls
+  - npm install --global yarn nyc codecov coveralls
 script:
   - yarn lint
   - nyc yarn test
