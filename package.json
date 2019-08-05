@@ -43,7 +43,7 @@
     "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
     "release": "run-s build lint test format dist",
     "test": "ava",
-    "test-coverage": "nyc --reporter=lcov --reporter=text ava"
+    "test-coverage": "nyc ava"
   },
   "devDependencies": {
     "@babel/cli": "7.5.5",
@@ -85,7 +85,12 @@
     "verbose": true
   },
   "nyc": {
+    "all": true,
     "require": "esm",
+    "reporter": [
+      "lcov",
+      "text"
+    ],
     "include": [
       "src/**"
     ]
