@@ -1,4 +1,4 @@
-import UPNG from 'upng-js'
+import {decode, encode, toRGBA8} from 'lib-upng'
 import isPng from 'is-png'
 
 function process(options) {
@@ -16,11 +16,11 @@ function process(options) {
       return input
     }
 
-    const img = UPNG.decode(input)
+    const img = decode(input)
 
     const output = Buffer.from(
-      UPNG.encode(
-        UPNG.toRGBA8(img),
+      encode(
+        toRGBA8(img),
         img.width,
         img.height,
         options.cnum,
