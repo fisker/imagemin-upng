@@ -13,5 +13,10 @@ export default {
       format: 'esm',
     },
   ],
-  plugins: [babel(), prettier()],
+  plugins: [
+    babel(),
+    prettier({
+      parser: 'babel',
+    }),
+  ],
 }
