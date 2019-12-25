@@ -13,5 +13,14 @@ module.exports = {
       },
     ],
   ],
-  plugins: ['babel-plugin-transform-async-to-promises'],
+  plugins: [
+    'babel-plugin-transform-async-to-promises',
+    [
+      '@babel/plugin-proposal-object-rest-spread',
+      {
+        loose: true,
+        useBuiltIns: true,
+      },
+    ],
+  ],
 }

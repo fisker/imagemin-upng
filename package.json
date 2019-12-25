@@ -26,6 +26,7 @@
   ],
   "sideEffects": false,
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "scripts": {
     "build": "run-p build:*",
     "build:js": "rollup --config",
@@ -73,6 +74,7 @@
   "devDependencies": {
     "@babel/cli": "7.7.7",
     "@babel/core": "7.7.7",
+    "@babel/plugin-proposal-object-rest-spread": "7.7.7",
     "@babel/preset-env": "7.7.7",
     "@commitlint/cli": "8.2.0",
     "@fisker/commitlint-config": "1.1.4",
@@ -95,7 +97,6 @@
     "prettier": "1.19.1",
     "rollup": "1.27.14",
     "rollup-plugin-babel": "4.3.3",
-    "rollup-plugin-filesize": "6.2.1",
     "rollup-plugin-prettier": "0.6.0",
     "sort-package-json": "1.31.0"
   },

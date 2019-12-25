@@ -1,9 +1,5 @@
 import babel from 'rollup-plugin-babel'
-import rollupPrettier from 'rollup-plugin-prettier'
-import filesize from 'rollup-plugin-filesize'
-import prettier from 'prettier'
-
-const prettierConfig = prettier.resolveConfig.sync(`src/index.js`)
+import prettier from 'rollup-plugin-prettier'
 
 export default {
   input: 'src/index.js',
@@ -12,12 +8,10 @@ export default {
       file: 'dist/index.js',
       format: 'cjs',
     },
+    {
+      file: 'dist/index.mjs',
+      format: 'esm',
+    },
   ],
-  plugins: [
-    babel(),
-    rollupPrettier({
-      ...prettierConfig,
-    }),
-    filesize(),
-  ],
+  plugins: [babel(), prettier()],
 }
