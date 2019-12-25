@@ -44,7 +44,7 @@
     "lint:markdown": "markdownlint \"**/*.md\" --ignore \"**/node_modules/**\"",
     "lint:package-json": "yarn run format:package-json --check",
     "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
-    "release": "run-s build lint test format dist",
+    "release": "run-s clean build lint test format dist",
     "test": "ava",
     "test-coverage": "nyc ava"
   },
