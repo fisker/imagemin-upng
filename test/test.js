@@ -17,7 +17,7 @@ function writeFixture(file, data) {
 }
 
 test('reject on non-buffer', async t => {
-  await t.throwsAsync(upng()(null), TypeError)
+  await t.throwsAsync(upng()(null), {instanceOf: TypeError})
 })
 
 test('optimize PNG', async t => {
