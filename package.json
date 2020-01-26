@@ -54,10 +54,10 @@
     }
   },
   "ava": {
+    "babel": true,
     "require": [
       "esm"
     ],
-    "babel": true,
     "verbose": true
   },
   "nyc": {
