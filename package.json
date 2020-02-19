@@ -14,7 +14,12 @@
     "upng",
     "upng-js"
   ],
+  "homepage": "https://github.com/fisker/imagemin-upng#readme",
+  "bugs": {
+    "url": "https://github.com/fisker/imagemin-upng/issues"
+  },
   "repository": "fisker/imagemin-upng",
+  "funding": "https://github.com/fisker/imagemin-upng?sponsor=1",
   "license": "MIT",
   "author": {
     "name": "fisker Cheung",
