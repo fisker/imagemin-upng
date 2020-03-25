@@ -7,7 +7,7 @@ function process(options) {
     ...options,
   }
 
-  return async input => {
+  return async (input) => {
     if (!Buffer.isBuffer(input)) {
       throw new TypeError(`Expected a \`Buffer\`, got \`${typeof input}\`.`)
     }

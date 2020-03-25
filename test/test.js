@@ -16,11 +16,11 @@ function writeFixture(file, data) {
   return fs.writeFileSync(getFixture(file), data)
 }
 
-test('reject on non-buffer', async t => {
+test('reject on non-buffer', async (t) => {
   await t.throwsAsync(upng()(null), {instanceOf: TypeError})
 })
 
-test('optimize PNG', async t => {
+test('optimize PNG', async (t) => {
   const buffer = readFixture('png.png')
   const data = await upng()(buffer)
 
@@ -30,7 +30,7 @@ test('optimize PNG', async t => {
   t.true(isPng(data))
 })
 
-test('optimize APNG', async t => {
+test('optimize APNG', async (t) => {
   const buffer = readFixture('apng.png')
   const data = await upng()(buffer)
 
@@ -40,7 +40,7 @@ test('optimize APNG', async t => {
   t.true(isPng(data))
 })
 
-test('support options', async t => {
+test('support options', async (t) => {
   const buffer = readFixture('png.png')
   const data = await upng({
     cnum: 128,
@@ -50,7 +50,7 @@ test('support options', async t => {
   t.true(isPng(data))
 })
 
-test('skip optimizing a non-PNG file', async t => {
+test('skip optimizing a non-PNG file', async (t) => {
   const buffer = await fs.readFileSync(__filename)
   const data = await upng()(buffer)
 
@@ -58,7 +58,7 @@ test('skip optimizing a non-PNG file', async t => {
 })
 
 // eslint-disable-next-line ava/no-skip-test
-test.skip('skip optimizing a fully optimized PNG', async t => {
+test.skip('skip optimizing a fully optimized PNG', async (t) => {
   const buffer = readFixture('png-compressed.png')
   const data = await upng()(buffer)
   t.is(data.length, buffer.length)
@@ -66,7 +66,7 @@ test.skip('skip optimizing a fully optimized PNG', async t => {
 })
 
 // eslint-disable-next-line ava/no-skip-test
-test.skip('skip optimizing a fully optimized APNG', async t => {
+test.skip('skip optimizing a fully optimized APNG', async (t) => {
   const buffer = readFixture('apng-compressed.png')
   const data = await upng()(buffer)
   t.is(data.length, buffer.length)
