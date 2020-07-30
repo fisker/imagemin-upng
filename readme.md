@@ -12,16 +12,16 @@ npm install --save imagemin-upng
 
 ```js
 const imagemin = require('imagemin')
-const imageminUPNG = require('imagemin-upng')
+const imageminUpng = require('imagemin-upng')
 
-imagemin(['images/*.png'], 'build/images', {use: [imageminUPNG()]}).then(() => {
+imagemin(['images/*.png'], 'build/images', {use: [imageminUpng()]}).then(() => {
   console.log('Images optimized')
 })
 ```
 
 ## API
 
-### imageminUPNG([options])(buffer)
+### imageminUpng([options])(buffer)
 
 Returns a promise for a buffer.
 
@@ -39,7 +39,3 @@ number of colors in the result (0 = lossless, 256 = lossy).
 Type: `Buffer`
 
 Buffer to optimize.
-
-## License
-
-MIT © [fisker Cheung](https://github.com/fisker)
