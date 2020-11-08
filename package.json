@@ -92,7 +92,7 @@
     "babel-plugin-transform-async-to-promises": "0.8.15",
     "cz-conventional-changelog": "3.3.0",
     "del-cli": "3.0.1",
-    "eslint": "7.12.1",
+    "eslint": "7.13.0",
     "esm": "3.2.25",
     "husky": "4.3.0",
     "imagemin": "7.0.1",
