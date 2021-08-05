@@ -1,5 +1,4 @@
 import {promises as fs} from 'node:fs'
-import path from 'node:path'
 import isPng from 'is-png'
 import test from 'ava'
 import imagemin from 'imagemin'
