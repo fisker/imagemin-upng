@@ -1,3 +1,4 @@
+import {Buffer} from 'node:buffer'
 import {decode, encode, toRGBA8} from 'lib-upng'
 import isPng from 'is-png'
 

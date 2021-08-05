@@ -11,10 +11,10 @@ module.exports = {
   root: true,
   env: {},
   parserOptions: {},
-  extends: ['@fisker/ava'],
+  extends: ['@fisker'],
   settings: {},
   rules: {},
   plugins: [],
   globals: {},
-  overrides: [],
+  overrides: [{files: ['test/**/*'], extends: ['@fisker/ava']}],
 }
