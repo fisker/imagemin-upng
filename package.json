@@ -67,7 +67,7 @@
     ]
   },
   "dependencies": {
-    "is-png": "3.0.0",
+    "is-png": "3.0.1",
     "lib-upng": "2.0.1"
   },
   "devDependencies": {
