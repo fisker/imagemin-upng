@@ -25,8 +25,8 @@ function process(options) {
         img.width,
         img.height,
         options.cnum,
-        img.frames.map(({delay}) => delay)
-      )
+        img.frames.map(({delay}) => delay),
+      ),
     )
 
     return output
