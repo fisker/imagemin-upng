@@ -6,4 +6,4 @@ const files = await imagemin(['images/*.png'], {
   plugins: [imageminUpng()],
 })
 
-console.log(files);
+console.log(files)
