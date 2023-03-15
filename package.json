@@ -71,7 +71,7 @@
   },
   "devDependencies": {
     "@fisker/eslint-config": "10.2.6",
-    "@fisker/eslint-config-ava": "2.0.5",
+    "@fisker/eslint-config-ava": "2.0.6",
     "@fisker/lint-staged-config": "3.1.6",
     "@fisker/prettier-config": "5.0.7",
     "ava": "5.2.0",
