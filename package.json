@@ -70,7 +70,7 @@
     "lib-upng": "3.0.0"
   },
   "devDependencies": {
-    "@fisker/eslint-config": "10.4.0",
+    "@fisker/eslint-config": "13.1.1",
     "@fisker/eslint-config-ava": "2.0.6",
     "@fisker/lint-staged-config": "3.3.2",
     "@fisker/prettier-config": "5.1.1",
